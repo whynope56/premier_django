@@ -1,21 +1,37 @@
 {% load static %}
 <html>
     <head>
-        <link href="https://fonts.googleapis.com/css2?family=Cagliostro&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css2?family=Cagliostro&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet"> 
         <link rel="stylesheet" href="{% static 'css/blog.css' %}">
         <title>Temple de LolaSana</title>
     </head>
     <body>
-        <div class="page-header">
-            <h1><a href="/">Django Girls Blog</a></h1>
-        </div>
-        <div class="content container">
-            <div class="row">
-                <div class="col-md-8">
-                {% block content %}
-                {% endblock %}
-                </div>
-            </div>
-        </div>
+        <header>
+            <nav class="top-navbar">
+                <a href="#">Home</a>
+                <div class="dropdown">
+                    <button class="dropbtn">Yoga
+                      <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                      <a href="#">Link 1</a>
+                      <a href="#">Link 2</a>
+                      <a href="#">Link 3</a>
+                    </div>
+                  </div>
+                <a href="#">Hypnothérapie</a>
+                <a href="#">Lola</a>
+                <a href="#">Articles</a>
+                <a href="#">Contact</a>
+            </nav>
+
+        </header>
+
+        
+        {% block content %}
+        {% endblock %}
+        
     </body>
 </html>
