@@ -24,7 +24,7 @@ h1 a, h2 a {
 }
 
 .top-navbar {
-    overflow: hidden;
+    overflow : hidden;
     background-color: var(--green2);
     margin: -10px -10px 0em -10px;
     font-family: Pacifico, sans-serif;
@@ -139,18 +139,17 @@ h1 a, h2 a {
 
 #rect-line1 {
   margin: 0px -10px 0em -10px;
-  
+  overflow-y: hidden;
+  min-width: 1400;
+  position: relative;
 }
 
-.rect-content {
-  padding: 10px;
-}
 
-#rect-line1 div {
+#rect-line1 .rect {
+  float: left;
+  /*flex: 246 0 1%;*/
   width: 25%;
   min-height: 500px;
-  float: left;
-  font-family: Cagliostro, monospace;
 }
 
 #rect1 {
@@ -169,3 +168,31 @@ h1 a, h2 a {
 #rect4 {
   background: var(--jaune-wix);
 }
+
+.rect-content {
+  text-align: center;
+}
+
+.rect-content h2 {
+  margin-top: 20px;
+  font-size: 38px;
+  text-align: center;
+  font-family: Oswald, sans-serif;
+  Color: white;
+}
+
+.rect-content img {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  height: 8em;
+}
+
+.rect-content p {
+  text-align: center;
+  margin-left: 40px;
+  margin-right: 40px;
+  font-size: 20px;
+  font-family: Gothic A1, sans-serif;
+}
+
+
