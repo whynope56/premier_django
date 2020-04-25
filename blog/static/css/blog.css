@@ -1,11 +1,16 @@
-h1 a, h2 a {
-    color: rgb(151, 71, 15);
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 
 :root {
   --green1: #B0CC99;
   --green2: #677E52;
   --green3: #B7CA79;
+  --green4: #A7BEAE;
   --beige: #F6E8B1;
   --brown: #89725B;
   --soft-pink: rgb(255, 224, 229);
@@ -14,7 +19,9 @@ h1 a, h2 a {
   --rouille: rgb(255, 175, 0, 1);
 
   --violet-wix: rgba(181, 170, 170, 1);
+  --light-volet-wix: rgba(241, 229, 229, 1);
   --bleu-wix: rgba(182, 209, 217, 1);
+  --light-bleu-wix: rgb(222, 229, 231, 1);
   --brun-wix: rgba(229, 199, 181, 1);
   --jaune-wix: rgba(242, 226, 145, 1);
 }
@@ -23,9 +30,14 @@ h1 a, h2 a {
     font-family: Cagliostro, sans-serif;
 }
 
+footer {
+  font-family: Cagliostro;
+  text-align: center;
+}
+
 .top-navbar {
     overflow : hidden;
-    background-color: var(--green2);
+    background-color: var(--green4);
     margin: -10px -10px 0em -10px;
     font-family: Pacifico, sans-serif;
     color: #A1A1A1;
@@ -42,7 +54,7 @@ h1 a, h2 a {
 
   /* Couleur et taille des textes des menus de la navbar */
 .top-navbar a, .top-navbar .dropdown .dropbtn {
-    color: var(--rouille);
+    color: white;
     padding: 1.5em 2.5em 1.5em 2.5em;
     font-size: 26px;
 
@@ -109,8 +121,7 @@ h1 a, h2 a {
 #logo-space-div2 {
   padding-top: 140px;
   background: var(--beige);
-  min-height: 240px;
-  max-height: 290px;
+  min-height: 360px;
   min-width: 1400px;
   margin: 0px -10px 0px -10px;
 }
@@ -139,23 +150,29 @@ h1 a, h2 a {
   margin-top: -15%;
 }
 
-#rect-line1 {
+.rect-line {
+  box-sizing: border-box;
   margin: 0px -10px 0em -10px;
-  overflow-y: hidden;
   min-width: 1400px;
   position: relative;
 }
 
-
-#rect-line1 .rect {
+.rect {
   float: left;
-  /*flex: 246 0 1%;*/
   width: 25%;
-  min-height: 500px;
 }
 
-#rect1 {
-  
+.rect-big {
+  float: left;
+  width: 50%;
+}
+
+.rect-big-big {
+  float: left;
+  width: 100%;
+}
+
+#rect1 {  
   background: var(--violet-wix);
 }
 
@@ -168,26 +185,65 @@ h1 a, h2 a {
 }
 
 #rect4 {
-  background: var(--jaune-wix);
+  background: var(--green4);
+}
+
+#rect5 {
+  background: var(--green4);
+}
+
+#rect6 {
+  background: linear-gradient(0.25turn, var(--green4), #5E4C3E, var(--violet-wix));
+}
+
+#rect7 {
+  background: var(--violet-wix);
+}
+
+#rect8 {
+  background: var(--light-bleu-wix);
+  height: 700px;
+}
+
+#rect-line2 .rect, #rect-line2 .rect-big {
+  height: 530px;
+}
+
+#rect-line1 .rect {
+  height: 550px;
 }
 
 .rect-content {
+  overflow: hidden;
   text-align: center;
+  min-height: 530px;
 }
 
 .rect-content h2 {
   margin-top: 20px;
-  font-size: 38px;
+  font-size: 36px;
   text-align: center;
   font-family: Oswald, sans-serif;
   Color: white;
 }
 
-.rect-content img {
+.rect-content .symbol {
   margin-top: 30px;
   margin-bottom: 20px;
-  height: 8em;
+  min-height: 8em;
+  max-height: 8em;
 }
+
+#portrait {
+  text-align: center;
+  /*border-color: var(--green4);
+  border-width: 10px;
+  border-style: solid;
+  border: 3px solid transparent;
+  border-image: linear-gradient(#f6b73c, #4d9f0c) 30;*/
+  height: 530px;
+}
+
 
 .rect-content p {
   text-align: center;
@@ -197,4 +253,224 @@ h1 a, h2 a {
   font-family: Gothic A1, sans-serif;
 }
 
+.rect-content a {
+  text-align: center;
+  font-family: Pacifico;
+  font-size: 20px;
+}
 
+#rect8 .rect-content {
+  padding: 80px 80px 80px 80px;
+  align-content: center;
+}
+
+#rect8 .rect-content p {
+  margin: 30px 300px 40px 300px;
+}
+
+#rect8 .rect-content h2 {
+  font-size: 52px;
+}
+
+#circle-container {
+  min-width: 1200px;
+  
+}
+
+.buble-text {
+  display: inline-block;
+  position: relative;
+  vertical-align: top;
+  margin-left: 30px;
+  margin-right: 30px;
+  text-align: center;
+  font-family: Gothic A1, sans-serif;
+  font-size: 20px;
+  min-width: 150px;
+}
+
+.buble {
+  font-family: Cagliostro, sans-serif;
+  border-radius: 50%;
+  font-size: 40px;
+  height: 80px;
+  line-height: 80px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  width: 80px;
+  text-align: center;
+  background: var(--beige);
+}
+
+/* ######### ANIMATION STUFF ############ */
+
+.anim-container {
+  width: 1400px;
+  height: 520px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.anim-container div {
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  font-size: 75px;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  text-transform: uppercase;
+  background: var(--violet-wix);
+  color: white;
+  font-family: Cagliostro;
+  width: 250px;
+  opacity: 0;
+  }
+
+#anim1 {
+  animation-duration: 18s;
+  animation-name: slide-left;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+#anim2 {
+  animation-duration: 18s;
+  animation-name: slide-left;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-delay: 6s;
+}
+#anim3 {
+  animation-duration: 18s;
+  animation-name: slide-left;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-delay: 12s;
+}
+
+/* ############################################################ */
+
+.slide-left {
+	-webkit-animation: slide-left 3s both;
+	        animation: slide-left 3s both;
+}
+
+/* ----------------------------------------------
+ * Generated by Animista on 2020-4-22 22:57:17
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation slide-left
+ * ----------------------------------------
+ */
+ @-webkit-keyframes slide-left {
+  0% {
+    -webkit-transform: translateX(1400px);
+            transform: translateX(1400px);
+            opacity: 0;
+  }
+  8% {
+    -webkit-transform: translateX(700px);
+            transform: translateX(700px);
+            opacity: 1;
+  }
+  25% {
+    -webkit-transform: translateX(700px);
+            transform: translateX(700px);
+            opacity: 1;
+  }
+  33% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+            opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+            opacity: 0;
+  }
+}
+
+@keyframes slide-left {
+  0% {
+    -webkit-transform: translateX(1400px);
+            transform: translateX(1400px);
+            opacity: 0;
+  }
+  8% {
+    -webkit-transform: translateX(700px);
+            transform: translateX(700px);
+            opacity: 1;
+  }
+  25% {
+    -webkit-transform: translateX(700px);
+            transform: translateX(700px);
+            opacity: 1;
+  }
+  33% {
+    letter-spacing: 1em;
+    filter: blur(12px) opacity(0%);
+  }
+  100% {
+    letter-spacing: 1em;
+    filter: blur(12px) opacity(0%);
+  }
+}
+
+/* ############################################ */
+
+.blur-out-expand {
+	animation: blur-out-expand 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+/* ----------------------------------------------
+ * Generated by Animista on 2020-4-22 23:37:40
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation blur-out-expand
+ * ----------------------------------------
+ */
+ @keyframes blur-out-expand {
+  0% {
+    filter: blur(0.01);
+  }
+  100% {
+    letter-spacing: 1em;
+    filter: blur(12px) opacity(0%);
+  }
+}
+
+/* A TESTER ! */
+.pvw-title span {
+  display: none;
+}
+.pvw-title:after {
+  content: 'whatever it is you want to add';
+}
+
+/* ########################### FIN ANIMATION STUFF */
+
+#line-rect4 {
+  height: 440px;
+}
+
+#rect9 {
+  background: var(--light-volet-wix);
+  height: 640px;
+}
+
+#rect9 .rect-content {
+  font-family: Pacifico, sans-serif;
+  padding: 120px;
+  vertical-align: center;
+  font-size: 38px;
+  text-align: top;
+}
