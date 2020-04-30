@@ -118,6 +118,13 @@ header div {
 
 .ligne-entree {
   display: flex;
+  padding: 40px 250px 40px 250px;
+  justify-content: space-between;
+  background: rgba(206, 90, 37, 0.986);
+}
+
+#ligne-entree-jeu {
+  display: flex;
   justify-content: center;
   align-items: center;
 }
@@ -143,7 +150,6 @@ header div {
   background-color: rgb(125, 185, 125);
   border-radius: 4px;
 }
-
 
 
 .frame a {
