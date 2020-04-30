@@ -24,3 +24,6 @@ def naaaaaaaan(request):
 
 def bonchoix(request):
     return render(request, 'blog/bonchoix.html')
+
+def dategame(request):
+    return render(request, 'blog/dategame.html')

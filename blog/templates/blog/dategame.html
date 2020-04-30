@@ -1,0 +1,20 @@
+{% extends 'blog/base_2.html' %}
+{% load static %}
+{% block content %}
+
+<div class="ligne">
+    <p style="font-size: 22px;">This is game</p>
+    <div class="ligne-entree">
+        <input id="entree" type="text" placeholder="c'est vide :(">
+        <button id="launch-button" type="button">Lancer</button>
+    </div>
+    <p id="oups">Défaut</p>
+</div>
+
+<div class="ligne">
+    
+</div>
+
+<script type="text/javascript" src="{% static 'js/dategame.js' %}"></script>
+
+{% endblock %}

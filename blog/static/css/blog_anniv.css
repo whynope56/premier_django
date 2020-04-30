@@ -6,6 +6,10 @@ html {
     box-sizing: inherit;
   }
 
+body {
+  font-family: Oswald, sans-serif;
+}
+
 header {
     width: 100vw;
     text-align: center;
@@ -79,7 +83,7 @@ header div {
     font-family: Oswald, sans-serif;
 }
 
-a {
+.rect-container a {
     color: white;
 }
 
@@ -96,6 +100,54 @@ a {
 #return-link {
     font-size: 28px;
     text-decoration: None;
+}
+
+.frame {
+  width: 30vw;
+  /*display: flex;*/
+  /*justify-content: space-between;*/
+  align-items: center;
+  text-align: center;
+  box-sizing: border-box;
+  border: 8px solid #111;
+  font-size: 28px;
+  margin: 30px auto;
+  font-family: Oswald, sans-serif;
+  padding: 40px;
+}
+
+.ligne-entree {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#entree {
+  height: 30px;
+  width: 220px;
+}
+
+#launch-button {
+  height: 30px;
+  width: 80px;
+}
+
+.error {
+  border:2px solid red;
+  background-color: rgb(255, 165, 165);
+  border-radius: 4px;
+}
+
+.ok {
+  border:2px solid green;
+  background-color: rgb(125, 185, 125);
+  border-radius: 4px;
+}
+
+
+
+.frame a {
+  color: rgb(168, 117, 50);
 }
 
 .text-flicker-in-glow {

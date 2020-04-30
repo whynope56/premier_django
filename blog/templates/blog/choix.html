@@ -2,7 +2,7 @@
 {% load static %}
 {% block content %}
 
-<div class="ligne">
+<div class="ligne-entree">
     <div class="rect" id="rect1">
         <div class="rect-container">
             <a id="bad-link" href="{% url 'naaaaaaaan' %}">NE CLIQUE <br> SURTOUT PAS ICI </a>
@@ -13,6 +13,12 @@
             <a id="good-link" href="{% url 'bonchoix' %}">Clique ici stp</a>
         </div>
     </div>
+</div>
+
+<div class="frame">
+    <p>
+        <a href="{% url 'dategame' %}">Accéder... AU JEU...</a>
+    </p>
 </div>
 
 {% endblock %}
