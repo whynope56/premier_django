@@ -132,11 +132,15 @@ header div {
 #entree {
   height: 30px;
   width: 220px;
+  font-family: Cagliostro, sans-serif;
 }
 
 #launch-button {
   height: 30px;
   width: 80px;
+  font-family: Cagliostro, sans-serif;
+  font-size: 16px;
+  line-height: 15px;
 }
 
 .error {

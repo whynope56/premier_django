@@ -1,26 +1,130 @@
 let elt = document.getElementById('oups');
+let elt2 = document.getElementById('oups2');
+let elt3 = document.getElementById('oups3');
 
 let entree = document.getElementById('entree');
+let launchButton = document.getElementById('launch-button');
 
 entree.addEventListener('input', function(){
-elt.textContent = entree.value.split("/")[2];
 
-if(entree.value.length == 0){
-  entree.className = "";
+  if(entree.value.length == 0){
+    entree.className = "";
+    launchButton.disabled = true;
+  }
+
+  else{
+    if(!isDateRight(entree.value)){
+      entree.className = " error";
+      launchButton.disabled = true;
+    }
+    else {
+        entree.className = " ok";
+        launchButton.disabled = false; 
+    }
 }
 
-else{
-  if(!isDateRight(entree.value)){
-    entree.className = " error";
-  }
-  else {
-      entree.className = " ok";
-  }
-}
+launchButton.addEventListener('click', function(){
+  elt3.textContent = "En cours...";
+  var tab = entree.value.split("/");
+  dayNumber = findDay(tab[0], tab[1], tab[2]);
+  elt3.innerHTML = "C'était un " + numberToDay(dayNumber) + "<br>" + "Oui j'ai trouvé à ta place.";
 
+});
 
 
 });
+
+function findDay(day, month, year){
+  // Initialisation
+  var number = 0;
+
+  // On ajoute les deux derniers chiffres de l'année (ou l'année elle même si elle est 
+  // inférieure ou égale à 2 chiffres)
+  if(year.length < 3){
+    number = parseInt(year);
+  }
+  else{
+    var y = year.length;
+    number = parseInt(year.substring(y-2, y));
+  }
+  
+  // On ajoute le quart de ce nombre, sans le reste
+  number = number + Math.floor(number/4);
+
+  // On ajoute le jour (facile celui-ci)
+  number = number + parseInt(day);
+
+  // On ajoute un chiffre selon le mois (là il faut faire des if, pas le choix)
+  var monthValue = parseInt(month);
+  if(monthValue == 2 || monthValue == 3 || monthValue == 11){
+    number = number + 3;
+  }
+  else if(monthValue == 4 || monthValue == 7){
+    number = number + 6;
+  }
+  else if(monthValue == 5){
+    number = number + 1;
+  }
+  else if(monthValue == 6){
+    number = number + 4;
+  }
+  else if(monthValue == 9 || monthValue == 12){
+    number = number + 5;
+  }
+  else if(monthValue == 8){
+    number = number + 2;
+  }
+  else{
+    number = number + 0;
+  }
+
+  // On enlève 1 pour janvier et février
+  if (monthValue == 1 || monthValue == 2){
+    number = number - 1;
+  }
+
+  // On ajoute un nombre selon le siècle (un truc modulo 400)
+  var siecle = Math.floor(parseInt(year)/100)
+  if(siecle % 4 == 0){
+    number = number + 6;
+  }
+  else if(siecle % 4 == 1){
+    number = number + 4;
+  }
+  else if(siecle % 4 == 2){
+    number = number + 2;
+  }
+  else{
+    number = number + 0;
+  }
+
+  return number % 7;
+
+}
+
+function numberToDay(number){
+  if(number == 0){
+    return "dimanche";
+  }
+  else if(number == 1){
+    return "lundi";
+  }
+  else if(number == 2){
+    return "mardi";
+  }
+  else if(number == 3){
+    return "mercredi";
+  }
+  else if(number == 4){
+    return "jeudi";
+  }
+  else if(number == 5){
+    return "vendredi";
+  }
+  else if(number == 6){
+    return "samedi";
+  }
+}
 
 function isDateRight(inputText){
 
@@ -103,3 +207,16 @@ function checkField(field)
     // validation was successful
     return true;
   }
+
+// Test REQUEST
+var request = new XMLHttpRequest();
+request.onreadystatechange = function() {
+    if (this.readyState == XMLHttpRequest.DONE && this.status == 200) {
+        var response = JSON.parse(this.responseText);
+        elt.textContent = response.current_condition.tmp + "°C à Lyon actuellement (" + response.current_condition.hour + ")";
+        elt2.textContent = "Si, c'est une info importante.";
+        console.log(response.current_condition.tmp);
+    }
+};
+request.open("GET", "https://www.prevision-meteo.ch/services/json/lat=45.747lng=4.836");
+request.send();
