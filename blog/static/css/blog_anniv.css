@@ -8,6 +8,8 @@ html {
 
 body {
   font-family: Oswald, sans-serif;
+  font-size: 0px;
+  margin: 0px
 }
 
 header {
@@ -33,14 +35,46 @@ header div {
 }
 
 .petite-ligne {
+    margin-top: -25px;
+    font-size: 0px;
     width: 100vw;
-    height: 100px;
     text-align: center;
-    background: rgba(146, 24, 24, 0.986);
 }
 
 .petite-ligne .rect {
-    height: 100px;
+    min-height: 200px;
+}
+
+.game-button {
+  background: rgba(206, 90, 37, 0);
+  border: white solid 2px;
+  border-radius: 4px;
+  color: white;
+  padding: 4px 6px 4px 6px;
+  margin: 0px 4px 0px 4px;
+}
+
+.game-button-false {
+  background: rgba(206, 90, 37, 0);
+  border: red solid 2px;
+  border-radius: 4px;
+  color: red;
+  padding: 4px 6px 4px 6px;
+  margin: 0px 4px 0px 4px;
+}
+
+#oups3 {
+  font-size: 22px;
+  color: white;
+}
+
+.game-button-right {
+  background: rgba(206, 90, 37, 0);
+  border: greenyellow solid 2px;
+  border-radius: 4px;
+  color: greenyellow;
+  padding: 4px 6px 4px 6px;
+  margin: 0px 4px 0px 4px;
 }
 
 .ligne .rect {
@@ -71,9 +105,29 @@ header div {
     font-size: 90px;
 }
 
+#rect5 {
+  background: rgba(146, 24, 24, 0.986);
+}
+
 #rect5 a {
     font-family: Oswald;
     font-size: 28px;
+    color: white;
+}
+
+#rect6 {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 28px;
+  background: rgb(168, 117, 50);
+}
+
+#rect7 {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 22px;
+  background: rgb(168, 117, 50);
+  height: 200px
 }
 
 .rect-container {
@@ -81,6 +135,10 @@ header div {
     padding: 200px 30px 200px 30px;
     font-size: 60px;
     font-family: Oswald, sans-serif;
+}
+
+.rect-container2 {
+  padding: 0px;
 }
 
 .rect-container a {
@@ -123,11 +181,11 @@ header div {
   background: rgba(206, 90, 37, 0.986);
 }
 
-#ligne-entree-jeu {
+/* #ligne-entree-jeu {
   display: flex;
   justify-content: center;
   align-items: center;
-}
+} */
 
 #entree {
   height: 30px;

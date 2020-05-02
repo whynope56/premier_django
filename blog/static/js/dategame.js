@@ -4,6 +4,7 @@ let elt3 = document.getElementById('oups3');
 
 let entree = document.getElementById('entree');
 let launchButton = document.getElementById('launch-button');
+let gameContent = document.getElementById('game-content');
 
 entree.addEventListener('input', function(){
 
@@ -21,18 +22,82 @@ entree.addEventListener('input', function(){
         entree.className = " ok";
         launchButton.disabled = false; 
     }
-}
+  }
+
+});
 
 launchButton.addEventListener('click', function(){
-  elt3.textContent = "En cours...";
+  launchButton.disabled = true;
+  entree.disabled = true;
   var tab = entree.value.split("/");
   dayNumber = findDay(tab[0], tab[1], tab[2]);
-  elt3.innerHTML = "C'était un " + numberToDay(dayNumber) + "<br>" + "Oui j'ai trouvé à ta place.";
-
+  createButton(gameContent, numberToDay(dayNumber));
+  //elt3.innerHTML = "C'était un " + numberToDay(dayNumber) + "<br>" + "Oui j'ai trouvé à ta place.";
+  
 });
 
+function buttonListen(){
 
-});
+}
+
+function createButton(parentElement, answer){
+  let buttonDiv = document.createElement('div');
+  let buttons = [];
+  
+  let btn1 = document.createElement('button');
+  btn1.textContent = "lundi";
+  let btn2 = document.createElement('button');
+  btn2.innerHTML = "mardi";
+  let btn3 = document.createElement('button');
+  btn3.innerHTML = "mercredi";
+  let btn4 = document.createElement('button');
+  btn4.innerHTML = "jeudi";
+  let btn5 = document.createElement('button');
+  btn5.innerHTML = "vendredi";
+  let btn6 = document.createElement('button');
+  btn6.innerHTML = "samedi";
+  let btn7 = document.createElement('button');
+  btn7.innerHTML = "dimanche";
+
+  btn1.setAttribute('class', 'game-button');
+  buttons.push(btn1);
+  btn2.setAttribute('class', 'game-button');
+  buttons.push(btn2);
+  btn3.setAttribute('class', 'game-button');
+  buttons.push(btn3);
+  btn4.setAttribute('class', 'game-button');
+  buttons.push(btn4);
+  btn5.setAttribute('class', 'game-button');
+  buttons.push(btn5);
+  btn6.setAttribute('class', 'game-button');
+  buttons.push(btn6);
+  btn7.setAttribute('class', 'game-button');
+  buttons.push(btn7);
+
+  for (let index = 0; index < 7; index++) {
+    buttons[index].addEventListener('click', function(){
+      if(buttons[index].getAttribute('class') == 'game-button-right'){
+        document.location.reload(true);
+      }
+      if(buttons[index].textContent == answer){
+        buttons[index].setAttribute('class', 'game-button-right');
+        btns = buttonDiv.getElementsByClassName('game-button');
+        btns_false = buttonDiv.getElementsByClassName('game-button-false');
+        btns_right = buttonDiv.getElementsByClassName('game-button-right');
+        elt3.innerHTML = "Cliquer sur le bouton vert pour réessayer.";
+      }
+      else{
+        buttons[index].setAttribute('class', 'game-button-false');
+      }
+    });
+
+    buttonDiv.appendChild(buttons[index]);    
+  }
+
+  parentElement.appendChild(buttonDiv);
+
+  
+}
 
 function findDay(day, month, year){
   // Initialisation
@@ -143,7 +208,7 @@ function isDateRight(inputText){
       return false;
     }
 
-    if (parseInt(month_string) < 13 && parseInt(month_string) > 0 && parseInt(day_string) > 0 && parseInt(day_string) < 32 && parseInt(year_string) != NaN && year_string.length > 0){
+    if (parseInt(month_string) < 13 && parseInt(month_string) > 0 && parseInt(day_string) > 0 && parseInt(day_string) < 32 && !isNaN(year_string) && year_string.length > 0){
       
       var month = parseInt(month_string);
       var year = parseInt(year_string);
