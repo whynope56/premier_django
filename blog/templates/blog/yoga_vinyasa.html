@@ -1,0 +1,34 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<!-- <div id="vinyasa-back-transition"></div> -->
+
+<div id="vinyasa-back">
+    <h1>Qu'est ce que le Vinyasa ?</h1>
+
+    <p class='paragraphe-droite'>
+        Le vinyasa est une pratique dite YANG, 
+        par opposition au YIN c'est une pratique 
+        solaire, énergique, dynamique, rapide et physique. <br>
+        Cette pratique se compose de séquence fluides, 
+        d’enchaînements de postures issus de la tradition 
+        Hatha debout, au sol, d'équilibre, de force, de souplesse...
+    </p>
+
+    <img class="yoga-img" src="{% static 'img/yoga/chaturanga_BW.jpg' %}">
+    
+    <p class="paragraphe-milieu">
+    Cette pratique fluide, enchainée, au rythme du souffle permet 
+    d'améliorer la conscience du corps, le contrôle et l'utilisation 
+    du souffle, le renforcement musculaire, la posture, la souplesse 
+    active et passive ainsi que l'écoute.
+    </p>
+
+    <img class="yoga-img" src="{% static 'img/yoga/dhanurasana.jpg' %}" style="margin-left: 25%;">
+
+</div>
+
+{% endblock %} 

@@ -5,6 +5,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet"> 
         <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+        <link rel="stylesheet" href="{% static 'css/yoga_pages.css' %}">
         <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@200&display=swap" rel="stylesheet"> 
         <title>Temple de LolaSana</title>
@@ -12,15 +13,19 @@
     <body>
         <header>
             <nav class="top-navbar">
-                <a href="#">Home</a>
+                <a href="{% url 'home_page' %}">Home</a>
                 <div class="dropdown">
                     <button class="dropbtn">Yoga
                       <i class="fa fa-caret-down"></i>
                     </button>
                     <div class="dropdown-content">
-                      <a href="#">Link 1</a>
-                      <a href="#">Link 2</a>
-                      <a href="#">Link 3</a>
+                      <a href="{% url 'yoga_vinyasa' %}">Vinyasa</a>
+                      <a href="{% url 'yoga_yin' %}">Yin</a>
+                      <a href="{% url 'yoga_natal' %}">Pré & Post Natal</a>
+                      <a href="{% url 'yoga_aerien' %}">Aérien</a>
+                      <a href="{% url 'yoga_planning' %}">Planning</a>
+                      <a href="{% url 'yoga_entreprise' %}">En entreprise</a>
+                      <a href="{% url 'yoga_intentions' %}">Mes intentions</a>
                     </div>
                   </div>
                 <a href="">Hypnothérapie</a>
@@ -33,10 +38,24 @@
 
         
         {% block content %}
+
         {% endblock %}
 
-        <footer>
-          LolaSana - Aucuns droits réservés
+        <footer style="padding: 30px;">
+
+            <div id="social-media-bar">
+              <a href="https://www.facebook.com/yogilolasana/" alt="Yogi LolaSana sur Facebook">
+                <img src="{% static 'img/facebook.png' %}">
+              </a>
+              <a href="https://www.youtube.com/user/lucy306/" alt="Yogi LolaSana sur Youtube">
+                <img src="{% static 'img/youtube.png' %}">
+              </a>
+              <a href="https://www.instagram.com/yogilolasana/" alt="Yogi LolaSana sur Instagram">
+                <img src="{% static 'img/instagram.png' %}">
+              </a>
+            </div>
+
+          <p>LolaSana - Aucuns droits réservés</p>
         </footer>
         
     </body>

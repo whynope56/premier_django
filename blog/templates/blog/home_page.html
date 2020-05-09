@@ -1,7 +1,9 @@
 {% extends 'blog/base.html' %}
 {% load static %}
 {% block content %}
-<div id="logo-space-div1"></div>
+
+<!--
+    <div id="logo-space-div1"></div>
 <div id="logo-div">
     <div id="logo-div2">
         <img src="{% static 'img/export_logo_001.png' %}">
@@ -11,6 +13,21 @@
 <div id="logo-space-div2">
     <div>Yoga . Hypnothérapie</div>
     <div>c o l l e c t i f  .  e n t r e p r i s e  .  i n d i v i d u e l</div>
+</div>
+-->
+
+<div id="logo-space-image" style="background-image: url({% static 'img/back-lola.jpg' %});">
+
+    <div id="logo-div1">
+        <img id="logo" src="{% static 'img/export_logo_001.png' %}">
+    </div>
+
+    <div id="headline">
+        <p>Yoga . Hypnothérapie</p>
+        <p>c o l l e c t i f   .   e n t r e p r i s e   .   i n d i v i d u e l</p>
+    </div>
+    
+
 </div>
 
 <div class="rect-line" id="rect-line1">

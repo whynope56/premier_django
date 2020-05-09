@@ -1,0 +1,59 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="back-div" id="planning-back"> <!--style="background-image: url({% static 'img/rect.png' %});"> -->
+
+    <div id="grid">
+
+        <div class="day" style="grid-column: 1;">Lundi</div>
+        <div class="day" style="grid-column: 2;">Mardi</div>
+        <div class="day" style="grid-column: 3;">Mercredi</div>
+        <div class="day" style="grid-column: 4;">Jeudi</div>
+        <div class="day" style="grid-column: 5;">Vendredi</div>
+        <div class="day" style="grid-column: 6;">Samedi</div>
+        <div class="day" style="grid-column: 7;">Dimanche</div>
+
+
+        <!-- LISTE DES CRENEAUX A DISPOSER AVEC LES VALEURS
+                         DE LIGNE ET COLONNE                 -->
+
+        <div class="studio-red" style="grid-column: 1; grid-row: 8;">
+            Vinyasa - <em>Yoga Lodge</em> <br> 18h - 19h15
+        </div>
+        <div class="studio-red" style="grid-column: 1; grid-row: 9;">
+            Vinyasa - <em>Yoga Lodge</em> <br> 19h30 - 20h45
+        </div>
+        <div class="studio-red" style="grid-column: 2; grid-row: 9;">
+            Vinyasa - <em>Sportin' Gones</em> <br> 19h15 - 20h30
+        </div>
+        <div class="entreprise-red" style="grid-column: 2; grid-row: 5;">
+            Vinyasa - <em>en entreprise</em><br> 12h00 - 13h00
+        </div>
+
+        <div class="studio-green" style="grid-column: 3; grid-row: 5;">
+            Yin - <em>Yoga Lodge</em> <br> 12h - 13h15
+        </div>
+
+        <div class="studio-green" style="grid-column: 5; grid-row: 5;">
+            Yin - <em>Yoga Lodge</em> <br> 12h - 13h15
+        </div>
+
+        <div class="studio-green2" style="grid-column: 5; grid-row: 3;">
+            Aérien - <em>Zen Space</em> <br> 10h - 11h00
+        </div>
+
+        <div class="studio-red" style="grid-column: 3; grid-row: 8;">
+            Vinyasa - <em>Fort Superposition</em> <br> 18h - 19h15
+        </div>
+        <div class="studio-red" style="grid-column: 3; grid-row: 9;">
+            Vinyasa - <em>Fort Superposition</em> <br> 19h30 - 20h45
+        </div>
+
+
+    </div>    
+
+</div>
+
+{% endblock %} 
